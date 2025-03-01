@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Labyrinth + Double Intensity Pools (Coexist)</title>
+    <link rel="stylesheet" href="Labyrinth.css">
+</head>
+
+<body>
+    <h1>Labyrinth Buffs</h1>
+
+    <!-- Labyrinth Buff Controls -->
+    <div class="settings">
+        <label for="roleSelect">Role:</label>
+        <select id="roleSelect">
+            <option value="attacker">Attacker</option>
+            <option value="defender">Defender</option>
+            <option value="supporter">Supporter</option>
+            <option value="fool">Fool</option>
+        </select>
+
+        <label for="depthInput">Depth:</label>
+        <input type="number" id="depthInput" value="2" min="1">
+
+        <label for="roleCountInput">Role Buffs:</label>
+        <input type="number" id="roleCountInput" value="2" min="1">
+
+        <label for="generalCountInput">General Buffs:</label>
+        <input type="number" id="generalCountInput" value="2" min="0">
+
+        <button id="updateSettingsBtn">Update Settings</button>
+        <button id="rerollAllBtn">Reroll All</button>
+    </div>
+
+    <!-- Container for Labyrinth Buffs -->
+    <div id="buffsContainer" class="buffs-container"></div>
+
+
+    <!-- GM Intensity Section -->
+    <h2>Enemy Intensity Effects</h2>
+
+    <div class="enemy-intensity-controls">
+        <label for="gmIntensityInput">Current GM Intensity:</label>
+        <input type="number" id="gmIntensityInput" value="0" min="0">
+
+        <!-- Checkbox to optionally show second pool early -->
+        <label for="secondPoolCheckbox">Use Second Intensity Pool:</label>
+        <input type="checkbox" id="secondPoolCheckbox" />
+
+        <!-- NEW inputs: number of effects to display from each pool -->
+        <label for="firstPoolCountInput"># in First Intensity Pool:</label>
+        <input type="number" id="firstPoolCountInput" value="4" min="1">
+
+        <label for="secondPoolCountInput"># in Second Intensity Pool:</label>
+        <input type="number" id="secondPoolCountInput" value="4" min="1">
+
+        <button id="updateGMIntensityBtn">Update GM Intensity</button>
+        <button id="rerollAllGMBtn">Reroll All (GM)</button>
+    </div>
+
+    
+        <div>
+            <h3>First Pool</h3>
+            <div id="gmFirstPoolContainer" class="buffs-container"></div>
+        </div>
+        <br>
+        <div>
+            <h3>Second Pool</h3>
+            <div id="gmSecondPoolContainer" class="buffs-container"></div>
+        </div>
+    
+
+    <script src="Labyrinth.js"></script>
+</body>
+
+</html>
