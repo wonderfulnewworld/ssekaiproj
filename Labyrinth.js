@@ -15,8 +15,8 @@ const attackerBuffs = [
     canRepeat: true
   },
   {name: 'Armor Ignore +25%', depth: 2, intensity: 3, canRepeat: true},
-  {name: 'Critical Chance +20%', depth: 3, intensity: 4, canRepeat: true},
-  {name: 'Evade Chance +10%', depth: 3, intensity: 3, canRepeat: true},
+  {name: 'Critical Chance +20%', depth: 3, intensity: 5, canRepeat: true},
+  {name: 'Evade Chance +10%', depth: 3, intensity: 5, canRepeat: true},
   {name: 'Power+', depth: 4, intensity: 4, canRepeat: true}, {
     name: 'Can use 2 Combat Arts at once',
     depth: 4,
@@ -26,19 +26,19 @@ const attackerBuffs = [
   {
     name: 'Basic Attack Multihit Hits+',
     depth: 4,
-    intensity: 5,
+    intensity: 6,
     canRepeat: true
   },
   {
     name: 'After defeating an enemy, FP +1',
     depth: 4,
-    intensity: 5,
+    intensity: 6,
     canRepeat: false
   },
   {
     name: 'Grants the ability to Charge Skills',
     depth: 5,
-    intensity: 4,
+    intensity: 8,
     canRepeat: false
   }
 ];
@@ -86,7 +86,7 @@ const defenderBuffs = [
     intensity: 5,
     canRepeat: false
   },
-  {name: 'Toughness+', depth: 5, intensity: 5, canRepeat: false}, {
+  {name: 'Toughness+', depth: 5, intensity: 7, canRepeat: false}, {
     name: 'Toughness +1 for every two enemies on the field (Max +3)',
     depth: 5,
     intensity: 6,
@@ -112,7 +112,7 @@ const supporterBuffs = [
     intensity: 3,
     canRepeat: true
   },
-  {name: 'Healing Effectiveness +33%', depth: 2, intensity: 3, canRepeat: true},
+  {name: 'Healing Effectiveness +33%', depth: 3, intensity: 3, canRepeat: true},
   {
     name: 'Supporter Actives restore 2 Health',
     depth: 3,
@@ -120,33 +120,33 @@ const supporterBuffs = [
     canRepeat: true
   },
   {
-    name: 'Attackers/Defenders gain Stamina/Focus Regen +1 on Even Rounds',
+    name: 'Attackers gain Stamina/Focus Regen +1 on Even Rounds',
     depth: 3,
-    intensity: 4,
-    canRepeat: true
+    intensity: 5,
+    canRepeat: false
   },
   {
     name: 'Defenders activate Health Regen on Even Rounds',
     depth: 3,
-    intensity: 4,
-    canRepeat: true
+    intensity: 5,
+    canRepeat: false
   },
   {
     name: 'Transfer and Comfort can now be used regardless of range',
     depth: 4,
     intensity: 5,
-    canRepeat: true
+    canRepeat: false
   },
-  {
+  {name: 'Cost-', depth: 5, intensity: 7, canRepeat: true}, {
     name: '2 Supporter Actives usable for Zero FP each round',
-    depth: 4,
-    intensity: 5,
-    canRepeat: true
+    depth: 5,
+    intensity: 8,
+    canRepeat: false
   },
   {
     name: 'Once per encounter, if ally Health falls to 0, restores them to 50%',
     depth: 5,
-    intensity: 5,
+    intensity: 8,
     canRepeat: true
   }
 ];
@@ -159,7 +159,7 @@ const foolBuffs = [
   {name: 'Defender Actives+', depth: 1, intensity: 3, canRepeat: true},
   {name: 'Supporter Actives+', depth: 1, intensity: 3, canRepeat: true},
   {name: 'Even Round Power+', depth: 2, intensity: 3, canRepeat: true},
-  {name: 'Odd Round Cost-', depth: 2, intensity: 4, canRepeat: true},
+  {name: 'Odd Round Cost-', depth: 2, intensity: 3, canRepeat: true},
   {name: 'Post-Encounter Money +50', depth: 2, intensity: 4, canRepeat: true},
   {name: 'Skill Mastery+', depth: 3, intensity: 5, canRepeat: false},
   {name: 'Defender Passives+', depth: 3, intensity: 5, canRepeat: true}, {
@@ -170,12 +170,12 @@ const foolBuffs = [
   },
   {
     name: '33% Chance to halve Damage Taken',
-    depth: 4,
-    intensity: 5,
-    canRepeat: true
+    depth: 5,
+    intensity: 7,
+    canRepeat: false
   },
-  {name: 'Critical Chance +33%', depth: 5, intensity: 5, canRepeat: true},
-  {name: 'Healing Effectiveness +50%', depth: 5, intensity: 5, canRepeat: true}
+  {name: 'Critical Chance +33%', depth: 5, intensity: 7, canRepeat: false},
+  {name: 'Healing Effectiveness +50%', depth: 5, intensity: 8, canRepeat: true}
 ];
 
 // =============================
@@ -185,9 +185,9 @@ const generalBuffs = [
   {name: 'Ammo Stock+/Coating Uses+', depth: 1, intensity: 2, canRepeat: true},
   {name: 'Starting FP+', depth: 2, intensity: 3, canRepeat: false},
   {name: 'Skill Mastery +5', depth: 2, intensity: 3, canRepeat: true},
-  {name: 'Money +150', depth: 2, intensity: 3, canRepeat: true},
+  {name: 'Money +150', depth: 2, intensity: 4, canRepeat: true},
   {name: 'Level +2', depth: 2, intensity: 4, canRepeat: true},
-  {name: 'Status Damage Taken -2', depth: 3, intensity: 4, canRepeat: true}, {
+  {name: 'Status Damage Taken -2', depth: 2, intensity: 2, canRepeat: true}, {
     name: 'Recovers 33% Max Health after encounter',
     depth: 3,
     intensity: 4,
@@ -202,14 +202,14 @@ const generalBuffs = [
   {
     name: 'Recovers 33% Max Purity after encounter',
     depth: 3,
-    intensity: 4,
+    intensity: 5,
     canRepeat: true
   },
   {name: 'Memory+', depth: 3, intensity: 4, canRepeat: true},
   {name: 'Health +4', depth: 4, intensity: 5, canRepeat: true},
   {name: 'Stamina +2', depth: 4, intensity: 5, canRepeat: true},
   {name: 'Focus +2', depth: 4, intensity: 5, canRepeat: true},
-  {name: 'FP +1 every 3rd Round', depth: 4, intensity: 5, canRepeat: false}
+  {name: 'FP +1 every 3rd Round', depth: 4, intensity: 4, canRepeat: false}
 ];
 
 /************************************************
