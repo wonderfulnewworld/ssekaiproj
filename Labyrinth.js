@@ -14,10 +14,10 @@ const attackerBuffs = [
     intensity: 3,
     canRepeat: true
   },
-  {name: 'Armor Ignore +25%', depth: 2, intensity: 3, canRepeat: true},
-  {name: 'Critical Chance +20%', depth: 3, intensity: 5, canRepeat: true},
-  {name: 'Evade Chance +10%', depth: 3, intensity: 5, canRepeat: true},
-  {name: 'Power+', depth: 4, intensity: 4, canRepeat: true}, {
+  {name: 'Armor Ignore +25%', depth: 2, intensity: 4, canRepeat: true},
+  {name: 'Critical Chance +20%', depth: 3, intensity: 6, canRepeat: true},
+  {name: 'Evade Chance +10%', depth: 3, intensity: 6, canRepeat: true},
+  {name: 'Power+', depth: 4, intensity: 5, canRepeat: true}, {
     name: 'Can use 2 Combat Arts at once',
     depth: 4,
     intensity: 6,
@@ -26,13 +26,13 @@ const attackerBuffs = [
   {
     name: 'Basic Attack Multihit Hits+',
     depth: 4,
-    intensity: 6,
+    intensity: 9,
     canRepeat: true
   },
   {
     name: 'After defeating an enemy, FP +1',
     depth: 4,
-    intensity: 6,
+    intensity: 8,
     canRepeat: false
   },
   {
@@ -40,27 +40,28 @@ const attackerBuffs = [
     depth: 5,
     intensity: 8,
     canRepeat: false
-  }
+  },
+  {name: 'Damage Dealt +25%', depth: 6, intensity: 11, canRepeat: false}
 ];
 
 // =============================
 // Defender Buffs
 // =============================
 const defenderBuffs = [
-  {name: 'Standard Armor+', depth: 1, intensity: 2, canRepeat: true},
-  {name: 'Prismatic Armor+', depth: 1, intensity: 3, canRepeat: true},
-  {name: 'Area Damage Taken -33%', depth: 3, intensity: 4, canRepeat: true}, {
+  {name: 'Standard Armor+', depth: 1, intensity: 3, canRepeat: true},
+  {name: 'Prismatic Armor+', depth: 1, intensity: 4, canRepeat: true},
+  {name: 'Area Damage Taken -33%', depth: 2, intensity: 4, canRepeat: true}, {
     name:
-        'After falling to 50% Health, grants Toughness +3 for the remainder of the round',
+        'After falling to 33% Health, grants Toughness +3 for the remainder of the round',
     depth: 3,
-    intensity: 4,
+    intensity: 5,
     canRepeat: false
   },
   {
     name: '20% Chance to halve Damage Taken',
     depth: 3,
-    intensity: 4,
-    canRepeat: true
+    intensity: 5,
+    canRepeat: false
   },
   {
     name: 'Next Armor +1 at the beginning of each round',
@@ -71,47 +72,47 @@ const defenderBuffs = [
   {name: 'Armor+', depth: 4, intensity: 5, canRepeat: true}, {
     name: 'Bracing now grants Toughness +1',
     depth: 4,
-    intensity: 5,
-    canRepeat: false
+    intensity: 6,
+    canRepeat: true
   },
   {
     name: 'Resting now grants Damage Taken -25%',
     depth: 4,
-    intensity: 5,
+    intensity: 6,
     canRepeat: false
   },
   {
     name: 'When drawing Aggro, Provokes instead',
     depth: 4,
-    intensity: 5,
-    canRepeat: false
-  },
-  {name: 'Toughness+', depth: 5, intensity: 7, canRepeat: false}, {
-    name: 'Toughness +1 for every two enemies on the field (Max +3)',
-    depth: 5,
     intensity: 6,
     canRepeat: false
-  }
+  },
+  {name: 'Toughness+', depth: 5, intensity: 8, canRepeat: false}, {
+    name: 'Toughness +1 for every two enemies on the field (Max +3)',
+    depth: 5,
+    intensity: 8,
+    canRepeat: false
+  },
+  {name: 'All attacks apply Aggro', depth: 6, intensity: 9, canRepeat: false}
 ];
 
 // =============================
 // Supporter Buffs
 // =============================
 const supporterBuffs = [
-  {name: 'Support Skill Cost-', depth: 1, intensity: 2, canRepeat: true},
-  {name: 'Attacker/Defender Level +1', depth: 1, intensity: 3, canRepeat: true},
+  {name: 'Support Skill Cost-', depth: 1, intensity: 4, canRepeat: true}, {
+    name: 'Attacker/Defender Options +1',
+    depth: 1,
+    intensity: 3,
+    canRepeat: true
+  },
   {
     name: 'Attacker/Defender Memory +1',
     depth: 1,
     intensity: 3,
     canRepeat: true
   },
-  {
-    name: 'Attacker/Defender Options +1',
-    depth: 1,
-    intensity: 3,
-    canRepeat: true
-  },
+  {name: 'Attacker/Defender Level +1', depth: 2, intensity: 5, canRepeat: true},
   {name: 'Healing Effectiveness +33%', depth: 3, intensity: 3, canRepeat: true},
   {
     name: 'Supporter Actives restore 2 Health',
@@ -121,34 +122,35 @@ const supporterBuffs = [
   },
   {
     name: 'Attackers gain Stamina/Focus Regen +1 on Even Rounds',
-    depth: 3,
+    depth: 4,
     intensity: 5,
     canRepeat: false
   },
   {
     name: 'Defenders activate Health Regen on Even Rounds',
-    depth: 3,
+    depth: 4,
     intensity: 5,
     canRepeat: false
   },
   {
     name: 'Transfer and Comfort can now be used regardless of range',
     depth: 4,
-    intensity: 5,
+    intensity: 6,
     canRepeat: false
   },
-  {name: 'Cost-', depth: 5, intensity: 7, canRepeat: true}, {
+  {name: 'Cost-', depth: 5, intensity: 8, canRepeat: true}, {
     name: '2 Supporter Actives usable for Zero FP each round',
     depth: 5,
     intensity: 8,
     canRepeat: false
   },
   {
-    name: 'Once per encounter, if ally Health falls to 0, restores them to 50%',
+    name: 'Once per encounter, if ally Health falls to 0, restores them to 20%',
     depth: 5,
     intensity: 8,
     canRepeat: true
-  }
+  },
+  {name: 'Attacker/Defender Level +2', depth: 6, intensity: 10, canRepeat: true}
 ];
 
 // =============================
@@ -161,55 +163,58 @@ const foolBuffs = [
   {name: 'Even Round Power+', depth: 2, intensity: 3, canRepeat: true},
   {name: 'Odd Round Cost-', depth: 2, intensity: 3, canRepeat: true},
   {name: 'Post-Encounter Money +50', depth: 2, intensity: 4, canRepeat: true},
-  {name: 'Skill Mastery+', depth: 3, intensity: 5, canRepeat: false},
+  {name: 'Skill Mastery+', depth: 3, intensity: 6, canRepeat: false},
   {name: 'Defender Passives+', depth: 3, intensity: 5, canRepeat: true}, {
     name: 'Zero FP Basic Attack every 2 rounds',
     depth: 4,
-    intensity: 5,
+    intensity: 6,
     canRepeat: false
   },
   {
     name: '33% Chance to halve Damage Taken',
     depth: 5,
-    intensity: 7,
+    intensity: 8,
     canRepeat: false
   },
-  {name: 'Critical Chance +33%', depth: 5, intensity: 7, canRepeat: false},
-  {name: 'Healing Effectiveness +50%', depth: 5, intensity: 8, canRepeat: true}
+  {name: 'Critical Chance +33%', depth: 5, intensity: 9, canRepeat: false},
+  {name: 'Healing Effectiveness +50%', depth: 5, intensity: 9, canRepeat: true},
+  {name: 'Power +2, Toughness +1, Cost -1', depth: 6, intensity: 10, canRepeat: false}
 ];
 
 // =============================
 // general Buffs
 // =============================
 const generalBuffs = [
-  {name: 'Ammo Stock+/Coating Uses+', depth: 1, intensity: 2, canRepeat: true},
-  {name: 'Starting FP+', depth: 2, intensity: 3, canRepeat: false},
+  {name: 'Ammo Stock+/Coating Uses+', depth: 1, intensity: 3, canRepeat: true},
+  {name: 'Starting FP+', depth: 2, intensity: 7, canRepeat: false},
   {name: 'Skill Mastery +5', depth: 2, intensity: 3, canRepeat: true},
-  {name: 'Money +150', depth: 2, intensity: 4, canRepeat: true},
-  {name: 'Level +2', depth: 2, intensity: 4, canRepeat: true},
+  {name: 'Money +150', depth: 2, intensity: 5, canRepeat: true},
+  {name: 'Level +2', depth: 2, intensity: 7, canRepeat: true},
   {name: 'Status Damage Taken -2', depth: 2, intensity: 2, canRepeat: true}, {
     name: 'Recovers 33% Max Health after encounter',
     depth: 3,
-    intensity: 4,
-    canRepeat: true
+    intensity: 5,
+    canRepeat: false
   },
   {
     name: 'Recovers 33% Max Stamina/Focus after encounter',
     depth: 3,
-    intensity: 4,
-    canRepeat: true
+    intensity: 5,
+    canRepeat: false
   },
   {
     name: 'Recovers 33% Max Purity after encounter',
     depth: 3,
     intensity: 5,
-    canRepeat: true
+    canRepeat: false
   },
-  {name: 'Memory+', depth: 3, intensity: 4, canRepeat: true},
-  {name: 'Health +4', depth: 4, intensity: 5, canRepeat: true},
-  {name: 'Stamina +2', depth: 4, intensity: 5, canRepeat: true},
-  {name: 'Focus +2', depth: 4, intensity: 5, canRepeat: true},
-  {name: 'FP +1 every 3rd Round', depth: 4, intensity: 4, canRepeat: false}
+  {name: 'Memory +2', depth: 3, intensity: 4, canRepeat: true},
+  {name: 'Health +5', depth: 4, intensity: 4, canRepeat: true},
+  {name: 'Stamina +2', depth: 4, intensity: 4, canRepeat: true},
+  {name: 'Focus +2', depth: 4, intensity: 4, canRepeat: true},
+  {name: 'FP +1 every 3rd Round', depth: 4, intensity: 7, canRepeat: false},
+  {name: 'Ebb Damage Taken -15%', depth: 5, intensity: 5, canRepeat: true},
+  {name: 'At the end of the round, reduce a random Status Duration on self by 1', depth: 6, intensity: 6, canRepeat: false}
 ];
 
 /************************************************
@@ -339,69 +344,77 @@ const gmIntensityEffects = [
     intensityDepth: 1,
     secondDepth: 1,
     canRepeat: false,
-    weight: 7
+    weight: 8
   },
   {
     name: 'Skill 4',
     intensityCost: 4,
-    intensityDepth: 15,
-    secondDepth: 27,
+    intensityDepth: 25,
+    secondDepth: 40,
     canRepeat: false,
-    weight: 5
+    weight: 6
   },
   {
     name: 'Skill 5',
     intensityCost: 6,
-    intensityDepth: 30,
-    secondDepth: 36,
+    intensityDepth: 40,
+    secondDepth: 50,
     canRepeat: false,
-    weight: 3
+    weight: 4
   },
   {
     name: 'Heavy 1',
     intensityCost: 4,
-    intensityDepth: 15,
-    secondDepth: 22,
+    intensityDepth: 25,
+    secondDepth: 35,
     canRepeat: false,
-    weight: 5
+    weight: 6
   },
   {
     name: 'Heavy 2',
     intensityCost: 7,
-    intensityDepth: 35,
-    secondDepth: 35,
+    intensityDepth: 40,
+    secondDepth: 50,
     canRepeat: false,
-    weight: 3
+    weight: 4
   },
   {
     name: 'Skill Booster',
     intensityCost: 7,
-    intensityDepth: 20,
+    intensityDepth: 25,
     secondDepth: 40,
     canRepeat: true,
-    weight: 5
+    weight: 6
   },
   {
     name: 'Heavy Booster',
-    intensityCost: 9,
+    intensityCost: 8,
     intensityDepth: 30,
     secondDepth: 50,
     canRepeat: false,
-    weight: 3
+    weight: 4
   },
   {
     name: 'Extra Passive',
-    intensityCost: 8,
+    intensityCost: 7,
     intensityDepth: 1,
     secondDepth: 20,
     canRepeat: false,
-    weight: 5
+    weight: 6
   },
   {
     name: 'Move Booster',
     intensityCost: 3,
     intensityDepth: 1,
     secondDepth: 1,
+    canRepeat: true,
+    weight: 3
+  },
+  {
+    name: 'Move Booster+',
+    intensityCost: 7,
+    intensityDepth: 25,
+    secondDepth: 50,
     canRepeat: true,
     weight: 2
   },
@@ -414,8 +427,16 @@ const gmIntensityEffects = [
     weight: 2
   },
   {
+    name: 'Speed Booster+',
+    intensityCost: 6,
+    intensityDepth: 20,
+    secondDepth: 40,
+    canRepeat: true,
+    weight: 2
+  },
+  {
     name: 'Bleed/Drain Reducer',
-    intensityCost: 4,
+    intensityCost: 3,
     intensityDepth: 1,
     secondDepth: 1,
     canRepeat: true,
@@ -439,9 +460,9 @@ const gmIntensityEffects = [
   },
   {
     name: 'FP Booster',
-    intensityCost: 14,
-    intensityDepth: 25,
-    secondDepth: 50,
+    intensityCost: 13,
+    intensityDepth: 30,
+    secondDepth: 60,
     canRepeat: false,
     weight: 1
   },
@@ -457,13 +478,13 @@ const gmIntensityEffects = [
     name: 'Fragmented Divergence',
     intensityCost: 16,
     intensityDepth: 40,
-    secondDepth: 70,
+    secondDepth: 80,
     canRepeat: false,
-    weight: 3
+    weight: 2
   },
   {
     name: 'Weapon Power',
-    intensityCost: 5,
+    intensityCost: 4,
     intensityDepth: 1,
     secondDepth: 1,
     canRepeat: true,
@@ -471,9 +492,9 @@ const gmIntensityEffects = [
   },
   {
     name: 'Weapon Power+',
-    intensityCost: 9,
-    intensityDepth: 20,
-    secondDepth: 40,
+    intensityCost: 7,
+    intensityDepth: 25,
+    secondDepth: 50,
     canRepeat: true,
     weight: 2
   },
@@ -487,9 +508,9 @@ const gmIntensityEffects = [
   },
   {
     name: 'Basic Strike Booster 2',
-    intensityCost: 8,
-    intensityDepth: 20,
-    secondDepth: 40,
+    intensityCost: 7,
+    intensityDepth: 25,
+    secondDepth: 50,
     canRepeat: false,
     weight: 2
   },
@@ -499,19 +520,19 @@ const gmIntensityEffects = [
     intensityDepth: 1,
     secondDepth: 1,
     canRepeat: true,
-    weight: 2
+    weight: 4
   },
   {
     name: 'Range Booster+',
     intensityCost: 6,
-    intensityDepth: 10,
-    secondDepth: 20,
+    intensityDepth: 15,
+    secondDepth: 25,
     canRepeat: false,
-    weight: 2
+    weight: 3
   },
   {
     name: 'Standard Armor Booster',
-    intensityCost: 5,
+    intensityCost: 4,
     intensityDepth: 1,
     secondDepth: 1,
     canRepeat: true,
@@ -520,14 +541,14 @@ const gmIntensityEffects = [
   {
     name: 'Standard Armor Booster+',
     intensityCost: 9,
-    intensityDepth: 20,
-    secondDepth: 40,
+    intensityDepth: 25,
+    secondDepth: 45,
     canRepeat: true,
     weight: 2
   },
   {
     name: 'Prismatic Armor Booster',
-    intensityCost: 5,
+    intensityCost: 4,
     intensityDepth: 1,
     secondDepth: 1,
     canRepeat: true,
@@ -536,26 +557,26 @@ const gmIntensityEffects = [
   {
     name: 'Prismatic Armor Booster+',
     intensityCost: 9,
-    intensityDepth: 20,
-    secondDepth: 40,
+    intensityDepth: 25,
+    secondDepth: 45,
     canRepeat: true,
     weight: 2
   },
   {
     name: 'Semi-Weakness Sealing',
     intensityCost: 8,
-    intensityDepth: 10,
-    secondDepth: 30,
+    intensityDepth: 15,
+    secondDepth: 35,
     canRepeat: false,
-    weight: 3
+    weight: 4
   },
   {
     name: 'Weakness Sealing',
     intensityCost: 13,
-    intensityDepth: 30,
-    secondDepth: 40,
+    intensityDepth: 35,
+    secondDepth: 50,
     canRepeat: false,
-    weight: 2
+    weight: 3
   },
   {
     name: 'Semi-Resistance Booster',
@@ -568,24 +589,24 @@ const gmIntensityEffects = [
   {
     name: 'Semi-Resistance Booster+',
     intensityCost: 8,
-    intensityDepth: 20,
-    secondDepth: 40,
+    intensityDepth: 25,
+    secondDepth: 45,
     canRepeat: true,
     weight: 2
   },
   {
     name: 'Resistance Booster',
     intensityCost: 8,
-    intensityDepth: 10,
-    secondDepth: 35,
+    intensityDepth: 15,
+    secondDepth: 40,
     canRepeat: true,
     weight: 3
   },
   {
     name: 'Resistance Booster+',
     intensityCost: 13,
-    intensityDepth: 35,
-    secondDepth: 50,
+    intensityDepth: 40,
+    secondDepth: 60,
     canRepeat: true,
     weight: 2
   },
@@ -607,17 +628,17 @@ const gmIntensityEffects = [
   },
   {
     name: 'Toughness Booster',
-    intensityCost: 8,
-    intensityDepth: 10,
-    secondDepth: 30,
+    intensityCost: 7,
+    intensityDepth: 15,
+    secondDepth: 35,
     canRepeat: true,
     weight: 2
   },
   {
     name: 'Toughness Booster+',
-    intensityCost: 14,
-    intensityDepth: 30,
-    secondDepth: 50,
+    intensityCost: 12,
+    intensityDepth: 35,
+    secondDepth: 60,
     canRepeat: true,
     weight: 2
   },
@@ -632,24 +653,24 @@ const gmIntensityEffects = [
   {
     name: 'Health Booster+',
     intensityCost: 9,
-    intensityDepth: 25,
-    secondDepth: 40,
+    intensityDepth: 30,
+    secondDepth: 50,
     canRepeat: true,
     weight: 3
   },
   {
     name: 'Health Bar Booster 1',
-    intensityCost: 6,
-    intensityDepth: 10,
-    secondDepth: 35,
+    intensityCost: 5,
+    intensityDepth: 15,
+    secondDepth: 40,
     canRepeat: false,
     weight: 3
   },
   {
     name: 'Health Bar Booster 2',
-    intensityCost: 13,
-    intensityDepth: 35,
-    secondDepth: 55,
+    intensityCost: 11,
+    intensityDepth: 40,
+    secondDepth: 60,
     canRepeat: false,
     weight: 2
   },
@@ -664,8 +685,8 @@ const gmIntensityEffects = [
   {
     name: 'Break/Burst Booster+',
     intensityCost: 4,
-    intensityDepth: 20,
-    secondDepth: 40,
+    intensityDepth: 25,
+    secondDepth: 50,
     canRepeat: true,
     weight: 2
   },
@@ -687,17 +708,17 @@ const gmIntensityEffects = [
   },
   {
     name: 'Critical Chance +20%',
-    intensityCost: 6,
-    intensityDepth: 10,
-    secondDepth: 35,
+    intensityCost: 5,
+    intensityDepth: 15,
+    secondDepth: 40,
     canRepeat: false,
     weight: 3
   },
   {
     name: 'Critical Chance +30%',
-    intensityCost: 13,
-    intensityDepth: 35,
-    secondDepth: 55,
+    intensityCost: 11,
+    intensityDepth: 40,
+    secondDepth: 60,
     canRepeat: false,
     weight: 2
   }
@@ -708,6 +729,8 @@ const gmIntensityEffects = [
 const gmUpgrades = {
   'Divergence': 'Fragmented Divergence',
   'Weapon Power': 'Weapon Power+',
+  'Speed Booster': 'Speed Booster+',
+  'Move Booster': 'Move Booster+',
   'Basic Strike Booster 1': 'Basic Strike Booster 2',
   'Range Booster': 'Range Booster+',
   'Standard Armor Booster': 'Standard Armor Booster+',
@@ -765,11 +788,11 @@ function pickWeightedItems(pool, count) {
 
 /**
  * Decide if second pool is used either because user toggles it
- * OR we auto-enable it at intensity >= 35.
+ * OR we auto-enable it at intensity >= 1.
  */
 function useSecondPoolNow() {
   const cb = document.getElementById('secondPoolCheckbox');
-  return cb.checked || currentGMIntensity >= 35;
+  return cb.checked || currentGMIntensity >= 1;
 }
 
 /**
